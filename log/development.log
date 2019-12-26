@@ -1,0 +1,891 @@
+  [1m[35m (1221.5ms)[0m  [1m[35mCREATE DATABASE "bharatApp_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "bharatApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (112.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying)[0m
+  [1m[35m (74.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (75.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (141.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191001161649)[0m
+  [1m[35m (10.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858);
+
+[0m
+  [1m[35m (108.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-25 12:22:42.658482"], ["updated_at", "2019-12-25 12:22:42.658482"]]
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b7feb8f0c3c127c141612b951cd2a3569f55eb72"], ["created_at", "2019-12-25 12:22:42.689153"], ["updated_at", "2019-12-25 12:22:42.689153"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (19.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (374.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying)[0m
+  [1m[35m (74.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (82.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (129.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (47.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191001161649)[0m
+  [1m[35m (42.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858);
+
+[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-25 12:22:43.818030"], ["updated_at", "2019-12-25 12:22:43.818030"]]
+  [1m[35m (10.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-25 12:22:43.836804"], ["key", "environment"]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b7feb8f0c3c127c141612b951cd2a3569f55eb72"], ["created_at", "2019-12-25 12:22:43.847164"], ["updated_at", "2019-12-25 12:22:43.847164"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2130228257652458775)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2130228257652458775)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-12-25 17:53:15 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 28ms (ActiveRecord: 0.0ms | Allocations: 1693)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-25 17:53:15 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 2.0ms | Allocations: 722)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 4262)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/bharat/r6/rails_6_devise_example-master/public/packs
+Completed 200 OK in 10890ms (Views: 10851.4ms | ActiveRecord: 4.4ms | Allocations: 18460)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 17:53:47 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 15.2ms | Allocations: 204)
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 178)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 23.2ms | Allocations: 2065)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 5673)
+
+
+Started POST "/users" for ::1 at 2019-12-25 17:54:34 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Aj6dLVU+45KRcjU5610OBymyucbVWYg7K6V50VkurEMJ54JRPPZYOcBFjDZdx+qlAulh3hGkUXaTgKh/9RdDlQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$11$kRFzcyzAe0GJwGcvnUGATOZKK8.sIb7edBWVSxtZkwhxvZgeHo3A2"], ["created_at", "2019-12-25 12:24:35.223906"], ["updated_at", "2019-12-25 12:24:35.223906"]]
+  [1m[35m (80.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 363ms (ActiveRecord: 82.3ms | Allocations: 11300)
+
+
+Started GET "/" for ::1 at 2019-12-25 17:54:35 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 302)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 1.0ms | Allocations: 4434)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-25 19:07:26 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"szlhCvinrXbDihUc5SPdGq6TCpLug1jFjU2XBT+cOJ0camcf/23AB6irAoVldOIY3RYFK11PlGTRnmOKzDxtzg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 38ms (ActiveRecord: 1.2ms | Allocations: 5642)
+
+
+Started GET "/" for ::1 at 2019-12-25 19:07:26 +0530
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 367)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-25 19:07:26 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.7ms | Allocations: 636)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2065)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 6362)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-25 19:07:41 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"MCjDqTFXXEaqIn30gV+y+nee7XvouvtBT52oC3oTbVOZpbcYsGK+a2qTNcjcWMCXs/QqJ7AbGdJXuPuqVdDMsQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 0.6ms | Allocations: 4565)
+
+
+Started GET "/" for ::1 at 2019-12-25 19:07:42 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 285)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 4251)
+
+
+Started GET "/" for ::1 at 2019-12-25 19:14:28 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 286)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 1.3ms | Allocations: 4713)
+
+
+Started GET "/" for ::1 at 2019-12-25 19:23:44 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 285)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 4704)
+
+
+Started GET "/" for ::1 at 2019-12-25 19:39:01 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 19.7ms | ActiveRecord: 5.9ms | Allocations: 13539)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-25 19:39:05 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5owDUePHWyR5+071cYO95lDFEfQcK8aC7nOEHmhh6d5m1JbKH35dKHmqcbmogSUWexenEhk/EyclNCmW3GwZKw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 5360)
+
+
+Started GET "/" for ::1 at 2019-12-25 19:39:05 +0530
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-25 19:39:05 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 2.9ms | Allocations: 718)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 3029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 6998)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 19:39:34 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 204)
+  Rendered users/shared/_links.html.erb (Duration: 1.6ms | Allocations: 178)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 15.3ms | Allocations: 2062)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 5664)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2130228257652458775)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddProfileImageToUser (20191225160029)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.7ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_image" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191225160029"]]
+  [1m[35m (49.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2130228257652458775)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_up" for ::1 at 2019-12-25 21:37:57 +0530
+  
+NoMethodError (undefined method `attr_accessible' for User (call 'User.connection' to establish a connection):Class
+Did you mean?  attr_accessor):
+  
+app/models/user.rb:10:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/users/sign_up" for ::1 at 2019-12-25 22:00:33 +0530
+  
+NameError (uninitialized constant User (call 'User.connection' to establish a connection)::ProfileImageUploader):
+  
+app/models/user.rb:6:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started PUT "/__web_console/repl_sessions/6b1241ef08fd223629cfa01e990cdb92" for ::1 at 2019-12-25 22:00:49 +0530
+Started PUT "/__web_console/repl_sessions/6b1241ef08fd223629cfa01e990cdb92" for ::1 at 2019-12-25 22:00:51 +0530
+Started PUT "/__web_console/repl_sessions/6b1241ef08fd223629cfa01e990cdb92" for ::1 at 2019-12-25 22:00:52 +0530
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:6:in `<class:User>'
+Started PUT "/__web_console/repl_sessions/6b1241ef08fd223629cfa01e990cdb92" for ::1 at 2019-12-25 22:30:53 +0530
+Started GET "/users/sign_up" for ::1 at 2019-12-25 22:32:42 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 205)
+  Rendered users/shared/_links.html.erb (Duration: 3.2ms | Allocations: 671)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 91.4ms | Allocations: 5855)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 193ms (Views: 157.2ms | ActiveRecord: 4.2ms | Allocations: 18405)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 22:34:10 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 2.1ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 2.3ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 38.5ms | Allocations: 5809)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 0.0ms | Allocations: 9978)
+
+
+Started POST "/users" for ::1 at 2019-12-25 22:34:46 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"mtl7itVskU2y6D1xaKIhqz8LdrZ119JaX/0dVxaELRNtwsewPLpQaJNrLR7bjzwNwsEFGsCM+G7X/mGZJJ9nvw==", "user"=>{"email"=>"abc@test.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x0000000003c9a9c0 @tempfile=#<Tempfile:/tmp/RackMultipart20191225-12758-ldrmvn.jpg>, @original_filename="JaiHanuman.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"JaiHanuman.jpg\"\r\nContent-Type: image/jpeg\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "profile_image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "abc@test.com"], ["encrypted_password", "$2a$11$gXaWsQ0mM5PQGCo5iRxFI.SYOpa60KeDrbFHwMxKnKhMqC8N6/Cvm"], ["created_at", "2019-12-25 17:04:46.928412"], ["updated_at", "2019-12-25 17:04:46.928412"], ["profile_image", "JaiHanuman.jpg"]]
+  [1m[35m (19.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 420ms (ActiveRecord: 20.7ms | Allocations: 15763)
+
+
+Started GET "/" for ::1 at 2019-12-25 22:34:47 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 301)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 13.1ms | ActiveRecord: 0.8ms | Allocations: 4480)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-12-25 22:41:40 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 289)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 1.1ms | Allocations: 4719)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2130228257652458775)[0m
+  [1m[35m (50.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRoleToUser (20191225172945)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "address" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191225172945"]]
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2130228257652458775)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/" for ::1 at 2019-12-25 23:10:40 +0530
+  
+LoadError (cannot load such file -- RMagick):
+  
+app/uploaders/profile_image_uploader.rb:3:in `include'
+app/uploaders/profile_image_uploader.rb:3:in `<class:ProfileImageUploader>'
+app/uploaders/profile_image_uploader.rb:1:in `<main>'
+app/models/user.rb:6:in `<class:User>'
+app/models/user.rb:3:in `<main>'
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/" for ::1 at 2019-12-25 23:11:59 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 17.9ms | ActiveRecord: 7.3ms | Allocations: 15559)
+
+
+Started GET "/users" for ::1 at 2019-12-25 23:12:17 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2019-12-25 23:12:24 +0530
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 188ms (ActiveRecord: 0.4ms | Allocations: 3853)
+
+
+Started GET "/" for ::1 at 2019-12-25 23:12:25 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 3827)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-25 23:12:28 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PDoSHWxTHO1xULKlvKfE6QHDXlChnuWgQB+FUsr4R1zLIa4nhYXdyFDTosoPitlP/Akt/BTFz5TIHPmc+OMN8A=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 182ms (ActiveRecord: 0.6ms | Allocations: 3316)
+
+
+Started GET "/" for ::1 at 2019-12-25 23:12:29 +0530
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 382)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-25 23:12:29 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.6ms | Allocations: 723)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2912)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 6918)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:12:35 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 6.0ms | Allocations: 203)
+  Rendered users/shared/_links.html.erb (Duration: 0.7ms | Allocations: 178)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2399)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 6022)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:13:48 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.2ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2758)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 7011)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:15:42 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.5ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2758)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 7007)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:16:24 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.1ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2759)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 7032)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:17:08 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2760)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 7022)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:17:27 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1346)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3705)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2 class="text-center m-5">Sign up</h2>
+<section class="col-8 offset-2 col-sm-6 offset-sm-3">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control m-2'  %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= class: 'custom-file-label' %><br />
+    <%= f.file_field :profile_image  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control m-2'  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control m-2'  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'btn btn-primary m-2'  %>
+  </div>
+<% end %>
+<hr>
+<%= render "users/shared/links" %>
+</section>
+):
+1:    <h2 class="text-center m-5">Sign up</h2>
+2:    <section class="col-8 offset-2 col-sm-6 offset-sm-3">
+3:    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
+4:      <%= render "devise/shared/error_messages", resource: resource %>
+5:    
+6:      <div class="field">
+7:        <%= f.label :email %><br />
+8:        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control m-2'  %>
+9:      </div>
+10:      <br/>
+11:      <div class="field">
+12:        <%= class: 'custom-file-label' %><br />
+13:        <%= f.file_field :profile_image  %>
+14:      </div>
+15:    
+16:      <div class="field">
+17:        <%= f.label :password %>
+18:        <% if @minimum_password_length %>
+19:        <em>(<%= @minimum_password_length %> characters minimum)</em>
+20:        <% end %><br />
+21:        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control m-2'  %>
+22:      </div>
+23:    
+24:      <div class="field">
+25:        <%= f.label :password_confirmation %><br />
+26:        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control m-2'  %>
+27:      </div>
+28:    
+29:      <div class="actions">
+30:        <%= f.submit "Sign up", class: 'btn btn-primary m-2'  %>
+31:      </div>
+32:    <% end %>
+33:    <hr>
+34:    <%= render "users/shared/links" %>
+35:    </section>
+  
+app/views/users/registrations/new.html.erb:12: syntax error, unexpected tLABEL
+app/views/users/registrations/new.html.erb:12: syntax error, unexpected tLABEL
+app/views/users/registrations/new.html.erb:12: syntax error, unexpected tLABEL
+app/views/users/registrations/new.html.erb:12: syntax error, unexpected tLABEL
+app/views/users/registrations/new.html.erb:12: syntax error, unexpected tLABEL
+app/views/users/registrations/new.html.erb:12: syntax error, unexpected tLABEL
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:18:28 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.5ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2774)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 7054)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:18:44 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.7ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 7016)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:21:21 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.6ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 7014)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:22:06 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.5ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 7020)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:24:18 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.1ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 7010)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:26:24 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.7ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2767)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 7021)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:27:21 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 2.1ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 7026)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:30:14 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2774)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 7047)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:31:42 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 2.1ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2749)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 6997)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:32:38 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.3ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2757)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 7017)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:33:29 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 2.1ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2757)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 7009)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:34:11 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 7020)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:34:18 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.2ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2767)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 7023)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:36:16 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 2.1ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 7025)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:36:34 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.3ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2757)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 7011)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:45:37 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.2ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 7027)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:46:04 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 2.5ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 7023)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-25 23:46:19 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.7ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 7047)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/bharat/.rvm/gems/ruby-2.6.5/bin/rake:23)
+Started GET "/users/sign_up" for ::1 at 2019-12-26 00:02:14 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.1ms | Allocations: 585)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2837)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 540.8ms | Allocations: 190469)
+  Rendered layouts/_navigation.html.erb (Duration: 541.8ms | Allocations: 190893)
+Completed 500 Internal Server Error in 573ms (ActiveRecord: 0.0ms | Allocations: 206042)
+
+
+  
+ActionView::Template::Error (undefined method `page_path' for #<#<Class:0x000000000561a468>:0x0000000005626ab0>
+Did you mean?  image_path):
+    1: 
+    2: <%# add navigation links to this file %>
+    3: <li><%= link_to 'About', page_path('about') %></li>
+  
+app/views/layouts/_navigation_links.html.erb:3
+app/views/layouts/_navigation.html.erb:16
+app/views/layouts/application.html.erb:17
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/bharat/.rvm/gems/ruby-2.6.5/bin/rake:23)
+Started GET "/users/sign_up" for ::1 at 2019-12-26 00:04:00 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/bharat/.rvm/gems/ruby-2.6.5/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 195)
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 581)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 1.2ms | Allocations: 146)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 1.9ms | Allocations: 387)
+  Rendered layouts/_navigation.html.erb (Duration: 5.9ms | Allocations: 1153)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 217)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 8874)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-26 00:04:14 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 197)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1485)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 346)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 5650)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-26 00:04:30 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"fnv43ZG6qpXBwM7lADUt06VXfRWdZ5eRZnntokD1A5jGGZc7Wneu2743/N1+GFQDWKdb900nTcQk+1RqXbJ03w==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 377ms (ActiveRecord: 1.0ms | Allocations: 5162)
+
+
+Started GET "/" for ::1 at 2019-12-26 00:04:30 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 286)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 77)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 281)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 35)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 4785)
+
+
+Started GET "/" for ::1 at 2019-12-26 00:04:52 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 273)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 31ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 4236)
+
+
+Started GET "/" for ::1 at 2019-12-26 00:04:54 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 273)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 14ms (Views: 6.4ms | ActiveRecord: 0.7ms | Allocations: 4252)
+
+
+Started GET "/admin" for ::1 at 2019-12-26 00:05:03 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-12-26 00:05:40 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 273)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 4232)
+
+
+Started GET "/" for ::1 at 2019-12-26 00:05:42 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.3ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 273)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 0.9ms | Allocations: 4222)
+
+
+Started GET "/" for ::1 at 2019-12-26 00:05:45 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 273)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 4222)
+
+
+Started GET "/" for ::1 at 2019-12-26 00:05:47 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 273)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 4218)
+
+
