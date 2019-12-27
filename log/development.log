@@ -889,3 +889,2182 @@ Processing by ApplicationController#home as HTML
 Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 4218)
 
 
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE DATABASE "bharatApp_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "bharatApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (46.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (40.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (52.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (161.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191225172945)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858),
+(20191001161649),
+(20191225160029);
+
+[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "52acf424ce79c34236440efa12c902b26f59827d"], ["created_at", "2019-12-27 09:00:35.789839"], ["updated_at", "2019-12-27 09:00:35.789839"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (160.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (28.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191225172945)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858),
+(20191001161649),
+(20191225160029);
+
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-27 09:00:36.913525"], ["updated_at", "2019-12-27 09:00:36.913525"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-27 09:00:36.921955"], ["key", "environment"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "52acf424ce79c34236440efa12c902b26f59827d"], ["created_at", "2019-12-27 09:00:36.928930"], ["updated_at", "2019-12-27 09:00:36.928930"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2130228257652458775)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2130228257652458775)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (30415.6ms)[0m  [1m[35mCREATE DATABASE "user_management_development" ENCODING = 'unicode'[0m
+  [1m[35m (36.4ms)[0m  [1m[35mCREATE DATABASE "bharatApp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (63.3ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (39.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (288.9ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (247.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (41.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191225172945)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858),
+(20191001161649),
+(20191225160029);
+
+[0m
+  [1m[35m (91.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-27 09:03:02.910737"], ["updated_at", "2019-12-27 09:03:02.910737"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "1c4d74c2c22174d899d4fdd84dbacb14ba3d0319"], ["created_at", "2019-12-27 09:03:02.919310"], ["updated_at", "2019-12-27 09:03:02.919310"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (45.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (44.0ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (46.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (149.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-12-27 09:03:03.399751"], ["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-27 09:03:03.410401"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "1c4d74c2c22174d899d4fdd84dbacb14ba3d0319"], ["updated_at", "2019-12-27 09:03:03.423778"], ["key", "schema_sha1"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (25.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-12-27 14:34:14 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 88ms (ActiveRecord: 0.0ms | Allocations: 1817)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 14:34:20 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.5ms | Allocations: 722)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 15.3ms | Allocations: 4285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.5ms | Allocations: 152)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.9ms | Allocations: 384)
+  Rendered layouts/_navigation.html.erb (Duration: 3.1ms | Allocations: 1170)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 216)
+Completed 200 OK in 187ms (Views: 125.7ms | ActiveRecord: 6.4ms | Allocations: 21868)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-27 14:34:43 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"LIWSTvMr5ogM7APd+QpvAgGzGXmRf2fme055dzRBt6CEQ9sekoONwgFnZrwY/T4pBC9VXiXmDMm/aj0PSpH6tQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (42.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 80ms (ActiveRecord: 43.1ms | Allocations: 2902)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"LIWSTvMr5ogM7APd+QpvAgGzGXmRf2fme055dzRBt6CEQ9sekoONwgFnZrwY/T4pBC9VXiXmDMm/aj0PSpH6tQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1178)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 90)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 294)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 211ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 5804)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-27 14:34:52 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/bbhushan/.rvm/gems/ruby-2.6.5@mhindra6/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 203)
+  Rendered users/shared/_links.html.erb (Duration: 0.5ms | Allocations: 178)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 2499)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 348)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 7218)
+
+
+Started POST "/users" for ::1 at 2019-12-27 14:35:46 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"iLuwEWMiC5DjI2Zg6YHTB0BvmoJ8f7BYfNd+3Rj0hwgMm+mXpri3hzMwHpGEsfj1giOXkIxkkgdZvDhAchr3Dg==", "user"=>{"email"=>"neel@nil.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fef12f0f330 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-11404-1xbegx1.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "profile_image", "role") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "neel@nil.com"], ["encrypted_password", "$2a$11$IxvAi30wabs//1RTaM4zsuyGFyYJeJAt10yuDxaXTsw6/RRdU9TBu"], ["created_at", "2019-12-27 09:05:48.814701"], ["updated_at", "2019-12-27 09:05:48.814701"], ["profile_image", "greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg"], ["role", 0]]
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2184ms (ActiveRecord: 42.5ms | Allocations: 14404)
+
+
+Started GET "/" for ::1 at 2019-12-27 14:35:48 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 30.3ms | Allocations: 299)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 279)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 36)
+Completed 200 OK in 86ms (Views: 82.1ms | ActiveRecord: 0.3ms | Allocations: 5416)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-27 14:36:27 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mCUpGYXkQSr+GfV+tEZUhIaOcexLqXh6tcm66+G7Vrkw42BJ5EwqYPOSkB9VsQWvgxI9y/8wE1Vx7f6Tn2sbrA=="}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 33ms (ActiveRecord: 2.2ms | Allocations: 5809)
+
+
+Started GET "/" for ::1 at 2019-12-27 14:36:27 +0530
+Processing by ApplicationController#home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 486)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 14:36:27 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1180)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 346)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 36)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 4912)
+
+
+Started GET "/users/auth/github" for ::1 at 2019-12-27 14:36:44 +0530
+Started GET "/users/auth/github" for ::1 at 2019-12-27 14:36:45 +0530
+Started POST "/users/sign_in" for ::1 at 2019-12-27 14:37:24 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zRQLrLsCzl5r6gMAfyMOxIpyAKJ5zo0rS4y5/Q98eqiUn5NaY3hkSKfgMIQ9WfvjqMd12Dz+zDzshN3QxPhrVA==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 139ms (ActiveRecord: 0.5ms | Allocations: 3764)
+
+
+Started GET "/" for ::1 at 2019-12-27 14:37:24 +0530
+Processing by ApplicationController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 273)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 35)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 4949)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProfiles (20191227091140)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (96.1ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191227091140"]]
+  [1m[35m (116.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToProfile (20191227091519)
+  [1m[35m (25.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "profiles" ADD "user_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191227091519"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6667298543062872015)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1582.1ms)[0m  [1m[35mCREATE DATABASE "user_management_development" ENCODING = 'unicode'[0m
+  [1m[35m (81.5ms)[0m  [1m[35mCREATE DATABASE "bharatApp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (505.9ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (443.8ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (404.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (143.8ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (403.8ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (221.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (24.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (48.0ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (63.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (48.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (57.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191227091519)[0m
+  [1m[35m (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858),
+(20191001161649),
+(20191225172945),
+(20191227091140);
+
+[0m
+  [1m[35m (92.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-27 09:24:31.641023"], ["updated_at", "2019-12-27 09:24:31.641023"]]
+  [1m[35m (26.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "20fd59e4df464acaadf9baab9d762bc6217e99cb"], ["created_at", "2019-12-27 09:24:31.675876"], ["updated_at", "2019-12-27 09:24:31.675876"]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (72.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (192.1ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (15.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (27.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (43.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191227091519)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191227091140);
+
+[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-12-27 09:24:32.304140"], ["key", "environment"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-27 09:24:32.315865"], ["key", "environment"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "20fd59e4df464acaadf9baab9d762bc6217e99cb"], ["updated_at", "2019-12-27 09:24:32.328861"], ["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1061.8ms)[0m  [1m[35mCREATE DATABASE "user_management_development" ENCODING = 'unicode'[0m
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE DATABASE "bharatApp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (61.1ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (22.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191227091519)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858),
+(20191001161649),
+(20191225172945),
+(20191227091140);
+
+[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-27 09:29:36.368359"], ["updated_at", "2019-12-27 09:29:36.368359"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "20fd59e4df464acaadf9baab9d762bc6217e99cb"], ["created_at", "2019-12-27 09:29:36.377324"], ["updated_at", "2019-12-27 09:29:36.377324"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (77.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (42.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "profile_image" character varying, "role" integer, "address" character varying)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-12-27 09:29:36.625673"], ["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-27 09:29:36.635140"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6667298543062872015)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1110.8ms)[0m  [1m[35mCREATE DATABASE "user_management_development" ENCODING = 'unicode'[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE DATABASE "bharatApp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (183.9ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (163.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (165.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (83.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (69.4ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer, "profile_image" character varying, "contact" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (214.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "role" integer)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (80.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191227091519)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858),
+(20191001161649),
+(20191225172945),
+(20191227091140);
+
+[0m
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-27 09:32:49.375858"], ["updated_at", "2019-12-27 09:32:49.375858"]]
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "b919a718992143494789310fd51943f49d7b77e1"], ["created_at", "2019-12-27 09:32:49.398335"], ["updated_at", "2019-12-27 09:32:49.398335"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (59.3ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer, "profile_image" character varying, "contact" character varying)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "role" integer)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-12-27 09:32:49.668476"], ["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (17.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-27 09:32:49.677972"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "b919a718992143494789310fd51943f49d7b77e1"], ["updated_at", "2019-12-27 09:32:49.703014"], ["key", "schema_sha1"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-12-27 15:29:34 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (58.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 136ms (ActiveRecord: 63.1ms | Allocations: 4319)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 15:29:36 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 618.9ms | Allocations: 207042)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 639.2ms | Allocations: 209489)
+Completed 500 Internal Server Error in 662ms (ActiveRecord: 0.0ms | Allocations: 219032)
+
+
+
+NoMethodError - undefined method `forgot_password_path' for #<#<Class:0x00007fd713d4b1a0>:0x00007fd713d49760>
+Did you mean?  user_password_path:
+  app/views/users/shared/_links.html.erb:11
+  app/views/users/sessions/new.html.erb:27
+
+Started POST "/__better_errors/c1e4b3289685b198/variables" for ::1 at 2019-12-27 15:29:37 +0530
+Started GET "/" for ::1 at 2019-12-27 15:31:28 +0530
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 531)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 15:31:28 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.5ms | Allocations: 664)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 757.8ms | Allocations: 347391)
+  Rendered layouts/_navigation.html.erb (Duration: 759.8ms | Allocations: 347819)
+Completed 500 Internal Server Error in 868ms (ActiveRecord: 0.0ms | Allocations: 354796)
+
+
+
+NoMethodError - undefined method `user_path' for #<#<Class:0x00007fd71a0ad248>:0x00007fd713fb3848>:
+  app/views/layouts/_navigation_links.html.erb:3
+  app/views/layouts/_navigation.html.erb:16
+  app/views/layouts/application.html.erb:17
+
+Started POST "/__better_errors/f12bb41fd7307629/variables" for ::1 at 2019-12-27 15:31:30 +0530
+Started GET "/users/sign_in" for ::1 at 2019-12-27 15:31:50 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 591)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2020)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.3ms | Allocations: 93)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 1.1ms | Allocations: 386)
+  Rendered layouts/_navigation.html.erb (Duration: 2.9ms | Allocations: 1099)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 217)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 8439)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-27 15:32:32 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/bbhushan/.rvm/gems/ruby-2.6.5@mhindra6/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 8.8ms | Allocations: 203)
+  Rendered users/shared/_links.html.erb (Duration: 0.4ms | Allocations: 178)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 2069)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 322)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 6411)
+
+
+Started POST "/users" for ::1 at 2019-12-27 15:32:42 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"YQtSScFu91ad1EgqnELlTW2ygUzaEOC2SUyewfFN0oKXC0JXaVXtvckfx4TekB6pIvii2uMzEvlRMHQiUkUhRA==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 1.2ms | Allocations: 9107)
+
+
+
+NoMethodError - undefined method `build_profile' for #<User:0x00007fd717c68608>:
+  app/models/user.rb:12:in `create_profile'
+
+Started POST "/__better_errors/d3493ead37e70cf6/variables" for ::1 at 2019-12-27 15:32:42 +0530
+Started GET "/users" for ::1 at 2019-12-27 15:33:23 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2019-12-27 15:33:34 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"DR5ZaLuIKAh6cqw03RphOCR8x1KVl4ZN+qK0Bfhyt+myigv128YCvcVTJpGvhVPtaBSk1YUwcdRoqhm3G2gXKw==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 8.3ms | Allocations: 15312)
+
+
+
+NoMethodError - undefined method `build_profile' for #<User:0x00007fd71a0be390>:
+  app/models/user.rb:12:in `create_profile'
+
+Started POST "/__better_errors/8de8dada377706b9/variables" for ::1 at 2019-12-27 15:33:34 +0530
+Started GET "/users" for ::1 at 2019-12-27 15:51:39 +0530
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/user.rb:8:in `<class:User>'
+  app/models/user.rb:3:in `<main>'
+  config/routes.rb:4:in `block in <main>'
+  config/routes.rb:3:in `<main>'
+
+Started POST "/__better_errors/04ca5d22d7456931/variables" for ::1 at 2019-12-27 15:51:39 +0530
+Started GET "/users" for ::1 at 2019-12-27 15:52:07 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-12-27 15:52:14 +0530
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms | Allocations: 1245)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 15:52:14 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 203)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1188)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 324)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 36)
+Completed 200 OK in 63ms (Views: 52.2ms | ActiveRecord: 0.0ms | Allocations: 11622)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-27 15:52:26 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"K01XoCVsXuC86Pec9gRyMfMx7XxlDVqTJt5cw3vfz+2U2QU9RSJ0VQPJfTmEm0Dkv1mO+3WqrQq01vFxmMVvLw==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 25ms (ActiveRecord: 1.2ms | Allocations: 2390)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"K01XoCVsXuC86Pec9gRyMfMx7XxlDVqTJt5cw3vfz+2U2QU9RSJ0VQPJfTmEm0Dkv1mO+3WqrQq01vFxmMVvLw==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1168)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 87)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 263)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 144ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4495)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-27 15:52:30 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/bbhushan/.rvm/gems/ruby-2.6.5@mhindra6/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 143)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1191)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 322)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5031)
+
+
+Started POST "/users" for ::1 at 2019-12-27 15:52:39 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Sksb6CrMNscGsAugq+niA//7Wh26K+KY9uU4XBpGbzC8Swv2gvcsLFJ7hA7pOxnnsLF5i4MIENfumdK/uU6c9g==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 6.2ms | Allocations: 13160)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'name' for Profile.:
+  app/models/user.rb:12:in `create_profile'
+
+Started POST "/__better_errors/22943338514d3ef4/variables" for ::1 at 2019-12-27 15:52:40 +0530
+Started GET "/users" for ::1 at 2019-12-27 15:56:26 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2019-12-27 15:56:35 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"uxg1MPGKBanjfhWaeQ7AfwwrO1WjGbxvvaoUurc0S0YEjGetkcQvHFxfnz8LkfKqQENY0rO+S/YvorkIVC7rhA==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 7.7ms | Allocations: 17452)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'name' for Profile.:
+  app/models/user.rb:9:in `create_profile'
+
+Started POST "/__better_errors/0f8bab3e2cc8ede7/variables" for ::1 at 2019-12-27 15:56:35 +0530
+  [1m[35m (2269.1ms)[0m  [1m[35mCREATE DATABASE "user_management_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "bharatApp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (48.2ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer, "name" character varying, "profile_image" character varying, "contact" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "role" integer)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (11.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191227091519)[0m
+  [1m[35m (10.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190926173858),
+(20191001161649),
+(20191225172945),
+(20191227091140);
+
+[0m
+  [1m[35m (54.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-27 10:29:10.031515"], ["updated_at", "2019-12-27 10:29:10.031515"]]
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "d7099ec8eec0ee5bf2c043b5e0f82dab61baeae8"], ["created_at", "2019-12-27 10:29:10.080865"], ["updated_at", "2019-12-27 10:29:10.080865"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (69.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments" CASCADE[0m
+  [1m[35m (85.0ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "admin_users" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35m (19.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" integer, "name" character varying, "profile_image" character varying, "contact" character varying)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "provider" character varying, "uid" character varying, "role" integer)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-12-27 10:29:10.451708"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-12-27 10:29:10.461223"], ["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "d7099ec8eec0ee5bf2c043b5e0f82dab61baeae8"], ["updated_at", "2019-12-27 10:29:10.470022"], ["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6667298543062872015)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6667298543062872015)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-12-27 15:59:41 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms | Allocations: 1438)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 15:59:41 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 6.6ms | Allocations: 719)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 46.0ms | Allocations: 3163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 6.6ms | Allocations: 96)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.8ms | Allocations: 386)
+  Rendered layouts/_navigation.html.erb (Duration: 9.0ms | Allocations: 1116)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 217)
+Completed 200 OK in 146ms (Views: 129.1ms | ActiveRecord: 4.5ms | Allocations: 17870)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-12-27 15:59:45 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/bbhushan/.rvm/gems/ruby-2.6.5@mhindra6/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 8.4ms | Allocations: 203)
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 181)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 50.2ms | Allocations: 2072)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 322)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 58ms (Views: 57.2ms | ActiveRecord: 0.0ms | Allocations: 6423)
+
+
+Started POST "/users" for ::1 at 2019-12-27 15:59:53 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"X87JR0YZN0Ml8iLw0SVz65nUDUSdvF8YVAcPv6+39fipztlZ7iItqHE5rV6T94gP1p4u0qSfrVdMe+VcDL8GPg==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :password_confirmation[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (43.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "neel@nil.com"], ["encrypted_password", "$2a$11$nm7wB284JgoYucWbzX.O/uRBzAjoHe9XEud3cjd2IFfQSn3dXfNHm"], ["created_at", "2019-12-27 10:29:53.834768"], ["updated_at", "2019-12-27 10:29:53.834768"], ["role", 0]]
+  [1m[36mProfile Exists? (7.4ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Create (0.7ms)[0m  [1m[32mINSERT INTO "profiles" ("created_at", "updated_at", "user_id", "name", "profile_image", "contact") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2019-12-27 10:29:53.915527"], ["updated_at", "2019-12-27 10:29:53.915527"], ["user_id", 1], ["name", "Person Name"], ["profile_image", "Person profile"], ["contact", "000 000 0000"]]
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 355ms (ActiveRecord: 96.6ms | Allocations: 22614)
+
+
+Started GET "/" for ::1 at 2019-12-27 15:59:53 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 2071)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 87)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 265)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 42ms (Views: 36.5ms | ActiveRecord: 1.3ms | Allocations: 7725)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2019-12-27 16:00:11 +0530
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 33.7ms | Allocations: 4447)
+  Rendered profiles/edit.html.erb within layouts/application (Duration: 137.1ms | Allocations: 4846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 261)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 148ms (Views: 142.5ms | ActiveRecord: 0.7ms | Allocations: 10383)
+
+
+Started PATCH "/profiles/1" for ::1 at 2019-12-27 16:00:22 +0530
+Processing by ProfilesController#update as HTML
+  Parameters: {"authenticity_token"=>"pKZRzxb5Pra40tZxraFvK79k0paszJB2LfEpnHinvOSLmMWBTRoec/xJ+WtuAimnaPmqbER6OMEm113o0bNrXA==", "profile"=>{"name"=>"Person Name", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2de822d18 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-m1pwzl.jpg>, @original_filename="counting.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"counting.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"000 000 0000"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:44:in `block in update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:44:in `block in update'
+  [1m[36mProfile Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:44:in `block in update'
+  [1m[36mProfile Update (0.4ms)[0m  [1m[33mUPDATE "profiles" SET "profile_image" = $1, "updated_at" = $2 WHERE "profiles"."id" = $3[0m  [["profile_image", "#<ActionDispatch::Http::UploadedFile:0x00007fa2de822d18>"], ["updated_at", "2019-12-27 10:30:22.936778"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:44:in `block in update'
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:44:in `block in update'
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 55ms (ActiveRecord: 43.4ms | Allocations: 7377)
+
+
+Started GET "/profiles/1" for ::1 at 2019-12-27 16:00:23 +0530
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 21.9ms | Allocations: 288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 47ms (Views: 42.8ms | ActiveRecord: 0.7ms | Allocations: 5809)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:00:26 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1560)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 1.1ms | Allocations: 6364)
+
+
+Started GET "/profiles/1" for ::1 at 2019-12-27 16:00:32 +0530
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 98)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.7ms | Allocations: 5449)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:00:34 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.9ms | Allocations: 6346)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2019-12-27 16:00:35 +0530
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.8ms | Allocations: 986)
+  Rendered profiles/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.6ms | Allocations: 6463)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:00:39 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.8ms | Allocations: 6322)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:05:04 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 7126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 37ms (Views: 15.7ms | ActiveRecord: 6.6ms | Allocations: 20119)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:05:11 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.9ms | Allocations: 968)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 30.9ms | Allocations: 1181)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 261)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 2.5ms | Allocations: 6133)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:05:35 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"WTt+YwYEQOlxKH7jKTGvp3nYDLcePTPaGKx94cgHrb6qrQJVogyjUlZRAZ6gO+7Y2Jy4AaT/AJXFPh4HWQhE8w==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2deb67190 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-oe4ol1.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.1ms | Allocations: 1238)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 1.2ms | Allocations: 9875)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:05:52 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1561)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 3.1ms | Allocations: 6342)
+
+
+Started GET "/profiles/1" for ::1 at 2019-12-27 16:05:56 +0530
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (2.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 98)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 35ms (Views: 26.1ms | ActiveRecord: 4.4ms | Allocations: 5552)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:05:58 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 1.1ms | Allocations: 6340)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:06:01 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.6ms | Allocations: 938)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1030)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 5817)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:06:25 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"+7wjyZvfgubwrO9AFDGNIpo9UU1S/f0qSW4Nl+/tqLIIKl//P9dhXdfVkD2dO8xdO3nl++g/zmWU/G5xfuJB/w==", "profile"=>{"name"=>"test@best.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2dd8f9170 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-19qzf2c.png>, @original_filename="Last 3 month ticket list - Google Sheets.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"Last 3 month ticket list - Google Sheets.png\"\r\nContent-Type: image/png\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.0ms | Allocations: 1225)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1317)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 1.0ms | Allocations: 9603)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:07:08 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 7126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 39ms (Views: 15.7ms | ActiveRecord: 6.9ms | Allocations: 20112)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:07:10 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.7ms | Allocations: 943)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1035)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 2.8ms | Allocations: 5836)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:07:19 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"p/hBhx+wgQeylzbOncRJ7vfguzO3P984yRuA66WrSzpUbj2xu7hivJXuSbMUzgiRVqQPhQ397HcUieMNNKSidw==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2de8b0910 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-t7da7m.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.0ms | Allocations: 1227)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 3.9ms | Allocations: 9675)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:08:05 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (1.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 16ms (Views: 8.7ms | ActiveRecord: 4.6ms | Allocations: 6342)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2019-12-27 16:08:07 +0530
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (1.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.6ms | Allocations: 984)
+  Rendered profiles/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 17ms (Views: 8.3ms | ActiveRecord: 4.3ms | Allocations: 6576)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:08:09 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 1.1ms | Allocations: 6318)
+
+
+Started GET "/profiles/1" for ::1 at 2019-12-27 16:08:11 +0530
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (2.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 98)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 14ms (Views: 6.3ms | ActiveRecord: 4.2ms | Allocations: 5451)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:08:12 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 1.1ms | Allocations: 6332)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2019-12-27 16:08:14 +0530
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.7ms | Allocations: 984)
+  Rendered profiles/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 17ms (Views: 8.4ms | ActiveRecord: 4.7ms | Allocations: 6466)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:08:15 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 1.3ms | Allocations: 6324)
+
+
+Started DELETE "/profiles/1" for ::1 at 2019-12-27 16:08:42 +0530
+Processing by ProfilesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/+5LbKJDEiSZrHeqoV+8GvQy710Fa/IMqtQZP0wPGwtAehnxwg04kSaN/Q/TwI7PuFqM2hXMBZU43LSNrxW7yQ==", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:57:in `destroy'
+  [1m[36mProfile Destroy (0.3ms)[0m  [1m[31mDELETE FROM "profiles" WHERE "profiles"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:57:in `destroy'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/profiles
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms | Allocations: 4440)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:08:42 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 673)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.8ms | Allocations: 5490)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:08:47 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.7ms | Allocations: 938)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1030)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 5823)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:08:54 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"fatZNg2DHBz8RkLvfsHbWtSsEPN/vNj5eF313mESO3mOPSUAqYv/p9s/PZL3y5oldeikRcV+67alz5Y48B3SNA==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2dde25180 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-1as7ixl.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>""}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.1ms | Allocations: 1224)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1316)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 1.1ms | Allocations: 9614)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:08:57 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"gqB2ll8Jb2aKFGe5QYioeQNbYaDXZ/DWgdao+QXzDX49NCQLP0dF0zU17RwzF5qsTzMCJ8fAB08T3gVL5umtvA==", "profile"=>{"name"=>"abc@abc.com", "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.6ms | Allocations: 1223)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 1.9ms | Allocations: 9570)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:09:28 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"cJlZWjiF+9NTn3tzhoQgJUQuU2d61nyqeZjveg2dA53PDQvHWMvRZuy+8db0GxLwCEYw4GpxizPrkELI7oejXw==", "profile"=>{"name"=>"abc@abc.com", "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.0ms | Allocations: 1223)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 61ms (Views: 52.0ms | ActiveRecord: 1.2ms | Allocations: 9548)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:10:24 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 45ms (Views: 7.5ms | ActiveRecord: 5.4ms | Allocations: 14153)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:10:27 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.8ms | Allocations: 996)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 22ms (Views: 7.7ms | ActiveRecord: 5.9ms | Allocations: 9680)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:10:35 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"ERq/r9Rx3RdoNZxqDQVjVRL62U4c0n3LiWpCSfsxPBTijMOZcHk+rE9M4xeEDyIqs75t+KYQToRU+CGvaj7VWQ==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2de140b58 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-1a8nrt.jpg>, @original_filename="e3410e4dd6237373045fc05944100656.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"e3410e4dd6237373045fc05944100656.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.8ms | Allocations: 1091)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1183)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 3.3ms | Allocations: 9728)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:10:52 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 27ms (Views: 7.4ms | ActiveRecord: 5.0ms | Allocations: 14115)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:10:53 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.1ms | Allocations: 996)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 24ms (Views: 11.4ms | ActiveRecord: 2.0ms | Allocations: 9674)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:11:01 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"H/dxMCa0Mkj4MLc5G31RNOF/l65bR7t/MCGKefht5HXsYQ0GgrzR899JyESSdxBLQDsjGOGFiDDts+mfaWINOA==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2de8b2d78 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-14klody.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.9ms | Allocations: 1091)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1183)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 14ms (Views: 8.7ms | ActiveRecord: 0.6ms | Allocations: 7388)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:12:58 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"q3DQiM+P5ySUnA9BzjGfjOls2KXXjLpcRlPh/U9n4ZUU5IIVr8HNkSu9heS8rq1ZpQS7IscrTcXUW0xPrH1BVw==", "profile"=>{"name"=>"abc@abc.com", "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.8ms | Allocations: 1087)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 1.1ms | Allocations: 6838)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:13:33 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"q2xvUNZFHGGk44DEIm9qoGAg/Z7ejKC5kV/Vhzy8cOIU+D3Ntgs21BvCCmFQ8Fh1LEieGc4rVyADV3g136bQIA==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2de8e9e68 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-19g5bs6.jpg>, @original_filename="counting.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"counting.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.7ms | Allocations: 1089)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1181)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 2.9ms | Allocations: 6835)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:15:49 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 28ms (Views: 7.5ms | ActiveRecord: 4.9ms | Allocations: 14086)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:15:51 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.8ms | Allocations: 996)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 64ms (Views: 32.0ms | ActiveRecord: 21.8ms | Allocations: 9671)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:15:57 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"eSEhVrWcU1JvVKJ9SGxJcCp9/2KEDhdAO/ly2GAGD9KKt11gEZSw6Ugt3QDBZggPizlL1D7MJA/maxE+8Qnmnw==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa2d87893d0 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-14796-1b3aqa5.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.8ms | Allocations: 1091)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1183)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 7381)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:16:25 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 7.4ms | Allocations: 96)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.9ms | Allocations: 336)
+  Rendered layouts/_navigation.html.erb (Duration: 10.0ms | Allocations: 1065)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 189)
+Completed 200 OK in 145ms (Views: 50.1ms | ActiveRecord: 8.8ms | Allocations: 18844)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:16:27 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 375.9ms | Allocations: 182606)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 387.7ms | Allocations: 182956)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 261)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 408ms (Views: 395.4ms | ActiveRecord: 1.8ms | Allocations: 191863)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:16:34 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"jNuR6nJe8w8w/b8UUdNkWO6i0BS3jEmKokTg8/T558B/Te3c1lYQtBeEwGnY2SUnT+Zkog1OesV/1oMVZfYOjQ==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fccfaa71ee8 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15002-1i35gqh.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.7ms | Allocations: 1106)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 29ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 8313)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:17:42 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 946)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 3.2ms | Allocations: 10234)
+
+
+
+NameError - uninitialized constant ActionView::Template::SyntaxErrorInTemplate
+Did you mean?  ActionView::SyntaxErrorInTemplate:
+
+Started POST "/__better_errors/8fdab962306383b7/variables" for ::1 at 2019-12-27 16:17:42 +0530
+Started GET "/profiles" for ::1 at 2019-12-27 16:17:54 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 948)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 16.1ms | Allocations: 94)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.7ms | Allocations: 314)
+  Rendered layouts/_navigation.html.erb (Duration: 18.4ms | Allocations: 1024)
+Completed 200 OK in 34ms (Views: 28.0ms | ActiveRecord: 1.8ms | Allocations: 7614)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:17:56 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 7.9ms | Allocations: 1296)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1642)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 261)
+Completed 200 OK in 27ms (Views: 22.4ms | ActiveRecord: 0.4ms | Allocations: 6523)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:18:05 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"rWGKdkXHT0I/3TDWYsotdLkksmmbdcIQ2cbwh95E+IZe9/ZA4c+s+RikT6vrwGwLGGAG3yG38V8EVJNhT0sRyw==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fccf6bf13d0 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15002-10fa7pr.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.7ms | Allocations: 1089)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1181)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 256)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 6789)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:19:55 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 943)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 6406)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:19:57 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 10.6ms | Allocations: 1296)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 1641)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 30.2ms | ActiveRecord: 0.3ms | Allocations: 6215)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:20:05 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"MsWWtsoqinBI0TN6JgIsbeu42HG3gyHnbisqTWMn/lvBU+qAbiJpy2+oTAevCG0SSvxsxw1BEqizuUmr8igXFg==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fccfb8439b8 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15002-1nu4i21.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 3.5ms | Allocations: 1089)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1181)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 13.9ms | ActiveRecord: 0.4ms | Allocations: 6464)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:23:31 +0530
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"V2GcP84g0anUkKj10jvZHU2vvM1/37sHCo29XuUxLNHo9c6irm77HGuxIlCgpOvIAcffSm94TJ6YhRDsBiuMEw==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007f8ef98d4638 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15125-bmxfoq.png>, @original_filename="Last 3 month ticket list - Google Sheets.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"Last 3 month ticket list - Google Sheets.png\"\r\nContent-Type: image/png\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 21.5ms | Allocations: 2102)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 29.6ms | Allocations: 2578)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 833ms (Views: 102.6ms | ActiveRecord: 11.4ms | Allocations: 205499)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:25:41 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1402)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 15.3ms | ActiveRecord: 5.2ms | Allocations: 14869)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:25:43 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 3.9ms | Allocations: 1352)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1697)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 2.3ms | Allocations: 10046)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:25:49 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"MfiBd/WV4tzszkY/bgv5RT54blS2yumekQbrYwClpiPCbv1BUZ0BZ8u3OULnAbg6nzza4gwI2tFMlIiFkapPbg==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007f8efd87bd90 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15125-9f0xm1.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.2ms | Allocations: 1091)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1184)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 11.9ms | ActiveRecord: 1.0ms | Allocations: 7007)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:26:23 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 943)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 25.2ms | Allocations: 96)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.9ms | Allocations: 335)
+  Rendered layouts/_navigation.html.erb (Duration: 29.2ms | Allocations: 1064)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 189)
+Completed 200 OK in 48ms (Views: 41.8ms | ActiveRecord: 2.5ms | Allocations: 8059)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:26:24 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.2ms | Allocations: 1296)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1640)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 261)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 6564)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:26:31 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"HLxIWqaDRPWZJ72ZgGMcP+ugEg9OW62zc564OhnHxqfvKjRsAounTr5ewuQJaV1ASuSmufSZnvyuDNvciMgv6g==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007f8ef9ece5e8 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15125-193y4wl.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.9ms | Allocations: 1089)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1181)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 6871)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:27:35 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"/HLyjKdqctvu0+z9+0ofRSf2Ghvmxd72knEm1QVV/aFD5qARxyRYblHyZliJ1S2Qa555nPZiKW8AeYtn5k9dYw==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007f8efe5abab0 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15125-dvoz6d.jpg>, @original_filename="counting.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"counting.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.1ms | Allocations: 1102)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 266)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 53ms (Views: 8.4ms | ActiveRecord: 8.4ms | Allocations: 19756)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:28:37 +0530
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"MUug3FHqDsa4oAH00p62PYTa/GgfHshZUPxbHzhMhG2O3/JBMaQkcweBi1GgAYToyLKf7w+5P8DC9Pat21Ykrw==", "profile"=>{"name"=>"abc@abc.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb4b44769e8 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15332-1lf69b1.jpg>, @original_filename="greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"greeting-card-for-happy-thanksgiving-day-vector-21517629.jpg\"\r\nContent-Type: image/jpeg\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1:in `create'
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mProfile Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mProfile Create (10.2ms)[0m  [1m[32mINSERT INTO "profiles" ("created_at", "updated_at", "user_id", "name", "profile_image", "contact") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2019-12-27 11:02:02.883309"], ["updated_at", "2019-12-27 11:02:02.883309"], ["user_id", 1], ["name", "abc@abc.com"], ["profile_image", "#<ActionDispatch::Http::UploadedFile:0x00007fb4b44769e8>"], ["contact", "Pune"]]
+  ↳ (byebug):1:in `create'
+  [1m[35m (107.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (9.7ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/profiles/2
+Completed 302 Found in 221568ms (ActiveRecord: 153.2ms | Allocations: 4153939)
+
+
+Started GET "/profiles/2" for ::1 at 2019-12-27 16:32:18 +0530
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:67:in `set_profile'
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.7ms | Allocations: 334)
+  Rendered layouts/_navigation.html.erb (Duration: 2.7ms | Allocations: 1063)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 207)
+Completed 200 OK in 177ms (Views: 102.0ms | ActiveRecord: 9.0ms | Allocations: 21357)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:32:25 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 7452)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 267)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 47ms (Views: 20.4ms | ActiveRecord: 8.5ms | Allocations: 20563)
+
+
+Started GET "/profiles/new" for ::1 at 2019-12-27 16:32:28 +0530
+Processing by ProfilesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 184.8ms | Allocations: 182542)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 186.0ms | Allocations: 182891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 84)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 261)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 197ms (Views: 192.1ms | ActiveRecord: 0.4ms | Allocations: 187856)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:32:39 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"qeM/im16X8tWEbsD6jsU4J9Jae2l4v1Dggcni5mroehadUO8yXK8cHFoxH5jMVWfPg3dWx8gzgxflURtCKRIpQ==", "profile"=>{"name"=>"test@best.com", "profile_image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb4b4dc5030 @tempfile=#<Tempfile:/var/folders/jt/mv_qqt3921l_dknx9sfpt4b40000gq/T/RackMultipart20191227-15332-1g9y3a.gif>, @original_filename="algf.gif", @content_type="image/gif", @headers="Content-Disposition: form-data; name=\"profile[profile_image]\"; filename=\"algf.gif\"\r\nContent-Type: image/gif\r\n">, "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (10.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 2.2ms | Allocations: 1104)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 247)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 37ms (Views: 8.9ms | ActiveRecord: 17.7ms | Allocations: 10266)
+
+
+Started POST "/profiles" for ::1 at 2019-12-27 16:33:02 +0530
+Processing by ProfilesController#create as HTML
+  Parameters: {"authenticity_token"=>"gH1H85Sikgj7x8bDvtDYDjx2uq9GZmGquwXjc/kUAbs/6RVu9Oy4vUTmTGbMT+rbcB7ZKFbBljMpDU7BGg6heQ==", "profile"=>{"name"=>"test@best.com", "contact"=>"Pune"}, "commit"=>"Create Profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[36mProfile Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/profiles_controller.rb:30:in `block in create'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 1.9ms | Allocations: 1102)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 256)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 61ms (Views: 8.0ms | ActiveRecord: 7.8ms | Allocations: 23970)
+
+
+Started GET "/profiles" for ::1 at 2019-12-27 16:33:06 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (4.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 7.9ms | Allocations: 6376)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/bbhushan/.rvm/gems/ruby-2.6.5@mhindra6/bin/rake:23)
+Started GET "/profiles" for ::1 at 2019-12-27 16:37:01 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 18.7ms | Allocations: 9078)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.6ms | Allocations: 318)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 1047)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 189)
+Completed 200 OK in 62ms (Views: 27.2ms | ActiveRecord: 9.2ms | Allocations: 26331)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-27 16:37:08 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XuLqK9iT0OTLtL8v6LWXYhwwmt3rzAPvtyaehqY2GvXhdri2uN36UXSVNYqaKqW3UFj5Wvtr9HYlLjM0RSy6Nw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 0.4ms | Allocations: 183909)
+
+
+Started GET "/" for ::1 at 2019-12-27 16:37:09 +0530
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 511)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 16:37:09 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 54.0ms | Allocations: 714)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 85.7ms | Allocations: 3031)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 322)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 36)
+Completed 200 OK in 95ms (Views: 93.5ms | ActiveRecord: 0.0ms | Allocations: 7758)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-12-27 16:37:18 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5cO5uH3pj9kZKceknpaxrQAD0awfvHSl9kngF6haJQDAxs1qTS4uDHt36gHmJRKwIQJWB7d+0xVEJnmpWVlV3Q==", "user"=>{"email"=>"neel@nil.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "neel@nil.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 0.8ms | Allocations: 5486)
+
+
+Started GET "/" for ::1 at 2019-12-27 16:37:19 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1539)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 1.1ms | Allocations: 6307)
+
+
+Started GET "/" for ::1 at 2019-12-27 16:38:34 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1835)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.7ms | Allocations: 305)
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 1015)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 180)
+Completed 200 OK in 24ms (Views: 17.1ms | ActiveRecord: 3.4ms | Allocations: 8909)
+
+
+Started GET "/" for ::1 at 2019-12-27 16:38:38 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1537)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.1ms | Allocations: 73)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.9ms | Allocations: 6286)
+
+
+Started GET "/" for ::1 at 2019-12-27 16:39:55 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.7ms | Allocations: 305)
+  Rendered layouts/_navigation.html.erb (Duration: 2.5ms | Allocations: 1015)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 180)
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 3.2ms | Allocations: 8920)
+
+
+Started GET "/" for ::1 at 2019-12-27 16:40:10 +0530
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/views/profiles/index.html.erb:17
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:22
+  Rendered profiles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1819)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.6ms | Allocations: 305)
+  Rendered layouts/_navigation.html.erb (Duration: 2.5ms | Allocations: 1013)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 180)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 1.8ms | Allocations: 8857)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-12-27 16:40:22 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VsxsSXGALbpwvG9Vg9f/TKCfJcixzDWn2QfcfJEilW67Qi1o6NZkM8b24ThUuMLryzwtJWEXU3FanQFuClDVqQ=="}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms | Allocations: 2401)
+
+
+Started GET "/" for ::1 at 2019-12-27 16:40:22 +0530
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 484)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-12-27 16:40:22 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.1ms | Allocations: 594)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2022)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation_links.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_nav_links_for_auth.html.erb (Duration: 0.3ms | Allocations: 142)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 322)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 36)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 6717)
+
+

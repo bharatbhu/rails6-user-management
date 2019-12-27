@@ -2,14 +2,16 @@
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  mount_uploader :profile_image, ProfileImageUploader
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github]
+   has_one :profile, :dependent => :destroy
+   before_create :create_profile
+    
+  def create_profile
+    profile = build_profile(:name => "Person Name", :profile_image => "Person profile",  :contact => "000 000 0000", user_id: current_user)
+  end
 
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
+
 
   def set_default_role
     self.role ||= :user
@@ -23,4 +25,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
+     devise :database_authenticatable, :registerable,
+     :recoverable, :rememberable, :validatable,
+     :omniauthable
 end
